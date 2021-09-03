@@ -107,9 +107,7 @@ func initConfig() {
 
 	viper.AutomaticEnv() // read in environment variables that match
 
-	if err := viper.SafeWriteConfig(); err != nil {
-		panic(err)
-	}
+	_ = viper.SafeWriteConfig()
 
 	if err := viper.ReadInConfig(); err != nil {
 		panic(err)
